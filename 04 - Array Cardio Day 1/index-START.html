@@ -69,6 +69,17 @@
     // Sum up the instances of each of these
     const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck' ];
 
+    const transportation = data.reduce((tally, mode) => {
+      if(tally.hasOwnProperty(mode)) {
+        tally[mode]++;
+      } else {
+        tally[mode] = 1;
+      }
+
+      return tally;
+    }, {});
+
+    console.log(transportation);
   </script>
 </body>
 </html>
